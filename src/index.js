@@ -1,7 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Redux from "redux";
+import { Provider } from "react-redux";
 
-import App from "./App";
+const App = () => <div className="test">Hello</div>;
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <Provider>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
