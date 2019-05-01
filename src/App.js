@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { moviesList } from "./actions";
+import { moviesList, directorsList } from "./actions";
 
 class App extends Component {
   componentWillMount() {
     this.props.getMovies();
+    this.props.getDirectors();
   }
 
   renderMovies = movies => (movies ? movies.map(item => <div>{item.name}</div>) : null);
 
   render() {
-    // console.log(this.props.data.movies);
+    console.log(this.props);
     return <div>{this.renderMovies(this.props.data.movies)}</div>;
   }
 }
@@ -25,6 +26,9 @@ const mapDispatchToProps = dispatch => {
   return {
     getMovies: () => {
       dispatch(moviesList());
+    },
+    getDirectors: () => {
+      dispatch(directorsList());
     }
   };
 };

@@ -10,3 +10,10 @@ export function moviesList() {
     ]
   };
 }
+
+export function directorsList() {
+  return {
+    type: "DIR_LIST",
+    payload: [{ id: "1", name: "Scorcese" }, { id: "2", name: "Kubrick" }]
+  };
+}
